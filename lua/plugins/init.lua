@@ -292,10 +292,10 @@ return
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = 'master',
+		branch = 'main',
 		event = { "BufReadPre", "BufNewFile" },
 		config = function ()
-			require	"nvim-treesitter.configs".setup {
+			require	"nvim-treesitter.config".setup {
 				highlight = {
 					enable = true,
 				}
