@@ -2,7 +2,6 @@ local servers =
 {
 	"lua_ls",
 	"clangd",
-	"omnisharp",
 	"slangd",
 	"glsl_analyzer"
 }
@@ -156,25 +155,7 @@ vim.lsp.config("clangd",
 		vim.keymap.set("n", "<leader>si", "<cmd>LspClangdShowSymbolInfo<CR>")
 
 		on_attach()
-	end,
-})
-
-vim.lsp.config("omnisharp",
-{
-	cmd = { "omnisharp", "-z", "--hostPID", "12345", "DotNet:enablePackageRestore=false", "--encoding", "utf-8", "--languageserver" },
-	filetypes = { "cs", "vb" },
-	settings = {
-		FormattingOptions = {
-			EnableEditorConfigSupport = true
-		},
-		MsBuild = {},
-		RenameOptions = {},
-		RoslynExtensionsOptions = {},
-		Sdk = {
-			IncludePrereleases = true
-		}
-	},
-	on_attach = on_attach,
+	end
 })
 
 vim.lsp.enable(servers)
@@ -182,8 +163,9 @@ vim.lsp.enable(servers)
 local x = vim.diagnostic.severity
 
 vim.diagnostic.config {
+	update_in_insert = true,
 	virtual_text = false,
 	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 	underline = false,
-	float = { border = "single" },
+	float = { border = "single" }
 }
