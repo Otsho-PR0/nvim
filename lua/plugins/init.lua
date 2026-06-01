@@ -6,7 +6,23 @@ return
 		priority=1000,
 		name = "catppuccin",
 		config = function()
-			require("catppuccin").setup({flavour = "mocha"})
+			require("catppuccin").setup
+			{
+				flavour = "mocha",
+				styles = {
+					conditionals = {},
+					keywords = {},
+					strings = {},
+					variables = {},
+					numbers = {},
+					booleans = {},
+					functions = {},
+					loops = {},
+					types = {},
+					operators = {},
+				}
+			}
+			
 			vim.cmd.colorscheme "catppuccin-nvim"
 		end
 	},
@@ -295,10 +311,9 @@ return
 		branch = 'main',
 		event = { "BufReadPre", "BufNewFile" },
 		config = function ()
-			require	"nvim-treesitter.config".setup {
-				highlight = {
-					enable = true,
-				}
+			require	"nvim-treesitter.config".setup
+			{
+				highlight = { enable = true }
 			}
 		end
 	},
