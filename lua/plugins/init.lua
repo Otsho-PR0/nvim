@@ -302,9 +302,18 @@ return
 		'stevearc/oil.nvim',
 		---@module 'oil'
 		---@type oil.SetupOpts
-		opts = {},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
 		lazy = false,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		keys = { { "<C-n>", "<cmd>NvimTreeToggle<CR>" } },
+		opts =
+		{
+			renderer = { root_folder_label = false }
+		}
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
