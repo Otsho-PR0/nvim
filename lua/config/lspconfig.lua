@@ -3,7 +3,10 @@ local servers =
 	"lua_ls",
 	"clangd",
 	"slangd",
-	"ts_ls"
+	"html",
+	"emmet_language_server",
+	"cssls",
+	"eslint",
 }
 
 local function on_attach(_, bufnr)
