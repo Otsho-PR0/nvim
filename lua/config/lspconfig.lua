@@ -3,7 +3,7 @@ local servers =
 	"lua_ls",
 	"clangd",
 	"slangd",
-	"glsl_analyzer"
+	"ts_ls"
 }
 
 local function on_attach(_, bufnr)
