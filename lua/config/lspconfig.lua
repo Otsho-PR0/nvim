@@ -4,7 +4,7 @@ local servers =
 	"clangd",
 	"slangd",
 	"html",
-	"emmet_language_server",
+	"emmet_ls",
 	"cssls",
 	"eslint",
 	"jsonls"
@@ -38,7 +38,7 @@ end
 vim.lsp.config("*",
 {
 	on_attach = on_attach,
-	capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require('blink.cmp').get_lsp_capabilities()
 })
 
 vim.lsp.config("lua_ls",
