@@ -322,8 +322,15 @@ return
 		config = function ()
 			require	"nvim-treesitter.config".setup
 			{
-				highlight = { enable = true }
+				highlight = { enable = true, additional_vim_regex_highlighting = false },
+				indent = { enable = true },
 			}
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "*",
+				callback = function()
+					vim.treesitter.start()
+				end,
+			})
 		end
 	},
 	{
