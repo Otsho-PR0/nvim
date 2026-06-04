@@ -7,6 +7,7 @@ local servers =
 	"emmet_language_server",
 	"cssls",
 	"eslint",
+	"jsonls"
 }
 
 local function on_attach(_, bufnr)
