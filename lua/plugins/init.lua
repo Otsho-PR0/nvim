@@ -70,7 +70,7 @@ return
 						shorting_target = 40,
 						symbols = {
 							modified = '*',
-							unnamed = '',
+							unnamed = '+',
 						}
 					}
 				},
