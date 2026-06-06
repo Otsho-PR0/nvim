@@ -6,7 +6,7 @@ local servers =
 	"html",
 	"emmet_ls",
 	"cssls",
-	"eslint",
+	"ts_ls",
 	"jsonls"
 }
 
@@ -91,7 +91,7 @@ vim.lsp.config("clangd",
 				editsNearCursor = true,
 			},
 		},
-		offsetEncoding = { "utf-8", "utf-16" },
+		offsetEncoding = { "utf-8", "utf-16" }
 	},
 	---@param client vim.lsp.Client
 	---@param init_result ClangdInitializeResult
@@ -160,6 +160,23 @@ vim.lsp.config("clangd",
 
 		on_attach()
 	end
+})
+
+vim.lsp.config("eslint",
+{
+	on_attach = function(client, bufnr)
+		if not base_on_attach then return end
+
+		base_on_attach(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "LspEslintFixAll",
+		})
+
+		on_attach()
+	end,
+
+	capabilities = capabilities
 })
 
 vim.lsp.enable(servers)
