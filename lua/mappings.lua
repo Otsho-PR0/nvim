@@ -1,5 +1,5 @@
-vim.keymap.set("v", "J", ":m ">+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m "<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
@@ -22,7 +22,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("t", "<C-x>", "<C-\\><C-N>")
 vim.keymap.set({"n", "t"}, "<M-t>", "<cmd>ToggleTerm direction=float<CR>")
 
-vim.keymap.set("n", "-", function () vim.cmd "Oil" end);
+vim.keymap.set("n", "-", function () vim.cmd("Oil") end);
 
 vim.keymap.set("n", "<leader>r", function ()
 	local cmd = "!" .. vim.fn.input("Run: ", "", "file")
