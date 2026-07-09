@@ -38,7 +38,7 @@ end
 vim.lsp.config("*",
 {
 	on_attach = on_attach,
-	capabilities = require('blink.cmp').get_lsp_capabilities()
+	capabilities = require("blink.cmp").get_lsp_capabilities()
 })
 
 vim.lsp.config("lua_ls",

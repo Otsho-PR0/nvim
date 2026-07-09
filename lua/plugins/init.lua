@@ -42,46 +42,46 @@ return
 		}
 	},
 	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			options = {
-				component_separators = { left = '', right = ''},
-				section_separators = { left = '', right = ''},
+				component_separators = { left = "", right = ""},
+				section_separators = { left = "", right = ""},
 				globalstatus = true,
-				theme = 'catppuccin-mocha'
+				theme = "catppuccin-mocha"
 			},
 			sections = {
 				lualine_a = {
 					{
-						'mode',
+						"mode",
 						fmt = function(str)
-							return ' ' .. str
+							return " " .. str
 						end,
 					}
 				},
 				lualine_b = {
 					{
-						'filename',
+						"filename",
 						file_status = true,
 						newfile_status = false,
 						path = 0,
 
 						shorting_target = 40,
 						symbols = {
-							modified = '*',
-							unnamed = '+',
+							modified = "*",
+							unnamed = "+",
 						}
 					}
 				},
 				lualine_c = {
 					{
-						'lsp_status',
-						icon = '',
+						"lsp_status",
+						icon = "",
 						ignore_lsp = {},
 					},
 					{
-						'diagnostics'
+						"diagnostics"
 					}
 				},
 				lualine_x = {
@@ -111,31 +111,31 @@ return
 		opts = {}
 	},
 	{
-		'windwp/nvim-autopairs',
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {}
 	},
 	{
-		'saghen/blink.cmp',
+		"saghen/blink.cmp",
 
-		version = '1.*',
+		version = "1.*",
 
-		---@module 'blink.cmp'
+		---@module "blink.cmp"
 		---@type blink.cmp.Config
 		opts = {
 			keymap = {
-				preset = 'default',
+				preset = "default",
 
-				['<Tab>'] = { 'accept', 'fallback' },
+				["<Tab>"] = { "accept", "fallback" },
 
-				['<C-k>'] = { 'select_prev', 'fallback' },
-				['<C-j>'] = { 'select_next', 'fallback' },
+				["<C-k>"] = { "select_prev", "fallback" },
+				["<C-j>"] = { "select_next", "fallback" },
 
-				['<C-space>'] = { function(cmp) cmp.show() end },
+				["<C-space>"] = { function(cmp) cmp.show() end },
 			},
 
 			appearance = {
-				nerd_font_variant = 'normal'
+				nerd_font_variant = "normal"
 			},
 
 			completion =
@@ -145,7 +145,7 @@ return
 			},
 
 			sources = {
-				default = { 'lsp', 'path', 'buffer' },
+				default = { "lsp", "path", "buffer" },
 			},
 
 			signature = { enabled = true },
@@ -231,11 +231,11 @@ return
 			end
 
 			dap.adapters.codelldb = {
-				type = 'server',
-				port = '${port}',
+				type = "server",
+				port = "${port}",
 				executable = {
-					command = 'codelldb.cmd',
-					args = {'--port', '${port}'},
+					command = "codelldb.cmd",
+					args = {"--port", "${port}"},
 					-- Add delay to avoid race condition
 					on_start = function()
 						vim.defer_fn(function()
@@ -246,9 +246,9 @@ return
 			}
 
 			dap.adapters.cppdbg = {
-				id = 'cppdbg',
-				type = 'executable',
-				command = 'OpenDebugAD7.cmd',
+				id = "cppdbg",
+				type = "executable",
+				command = "OpenDebugAD7.cmd",
 				options = {
 					detached = false
 				}
@@ -260,9 +260,9 @@ return
 					type = "codelldb",
 					request = "launch",
 					program = function()
-						return vim.fn.input('Path to executable: ', '', 'file')
+						return vim.fn.input("Path to executable: ", "", "file")
 					end,
-					cwd = '${workspaceFolder}',
+					cwd = "${workspaceFolder}",
 					stopOnEntry = false
 				},
 				{
@@ -270,21 +270,21 @@ return
 					type = "cppdbg",
 					request = "launch",
 					program = function()
-						return vim.fn.input('Path to executable: ', '', 'file')
+						return vim.fn.input("Path to executable: ", "", "file")
 					end,
-					cwd = '${workspaceFolder}',
+					cwd = "${workspaceFolder}",
 					stopAtEntry = false,
 				},
 				{
-					name = 'Attach to gdbserver :1234',
-					type = 'cppdbg',
-					request = 'launch',
-					MIMode = 'gdb',
-					miDebuggerServerAddress = 'localhost:1234',
-					miDebuggerPath = 'gdb',
-					cwd = '${workspaceFolder}',
+					name = "Attach to gdbserver :1234",
+					type = "cppdbg",
+					request = "launch",
+					MIMode = "gdb",
+					miDebuggerServerAddress = "localhost:1234",
+					miDebuggerPath = "gdb",
+					cwd = "${workspaceFolder}",
 					program = function()
-						return vim.fn.input('Path to executable: ', '', 'file')
+						return vim.fn.input("Path to executable: ", "", "file")
 					end,
 				},
 			}
@@ -299,8 +299,8 @@ return
 		end,
 	},
 	{
-		'stevearc/oil.nvim',
-		---@module 'oil'
+		"stevearc/oil.nvim",
+		---@module "oil"
 		---@type oil.SetupOpts
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
@@ -317,7 +317,7 @@ return
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = 'main',
+		branch = "main",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function ()
 			require	"nvim-treesitter.config".setup
@@ -334,35 +334,35 @@ return
 		end
 	},
 	{
-		'MeanderingProgrammer/render-markdown.nvim',
-		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-		---@module 'render-markdown'
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+		---@module "render-markdown"
 		---@type render.md.UserConfig
 		opts = {},
 	},
 	{
-		'nvim-telescope/telescope.nvim',
-		dependencies = { 'nvim-lua/plenary.nvim' },
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = true,
 		keys = {
-			{'<leader>fpf', "<cmd>Telescope find_files<CR>"},
-			{'<leader>fpg', "<cmd>Telescope live_grep<CR>"},
-			{'<leader>fgb', "<cmd>Telescope git_branches<CR>"},
-			{'<leader>fgf', "<cmd>Telescope git_files<CR>"},
-			{'<leader>fgs', "<cmd>Telescope git_status<CR>"},
-			{'<leader>fgpc', "<cmd>Telescope git_commits<CR>"},
-			{'<leader>fgbc', "<cmd>Telescope git_bcommits<CR>"},
-			{'<leader>fd', "<cmd>Telescope diagnostics<CR>"},
-			{'<leader>fb', "<cmd>Telescope buffers<CR>"},
-			{'<leader>fh', "<cmd>Telescope help_tags<CR>"},
-			{'<leader>fk', "<cmd>Telescope keymaps<CR>"},
-			{'<leader>ft', "<cmd>Telescope colorscheme<CR>"}
+			{"<leader>fpf", "<cmd>Telescope find_files<CR>"},
+			{"<leader>fpg", "<cmd>Telescope live_grep<CR>"},
+			{"<leader>fgb", "<cmd>Telescope git_branches<CR>"},
+			{"<leader>fgf", "<cmd>Telescope git_files<CR>"},
+			{"<leader>fgs", "<cmd>Telescope git_status<CR>"},
+			{"<leader>fgpc", "<cmd>Telescope git_commits<CR>"},
+			{"<leader>fgbc", "<cmd>Telescope git_bcommits<CR>"},
+			{"<leader>fd", "<cmd>Telescope diagnostics<CR>"},
+			{"<leader>fb", "<cmd>Telescope buffers<CR>"},
+			{"<leader>fh", "<cmd>Telescope help_tags<CR>"},
+			{"<leader>fk", "<cmd>Telescope keymaps<CR>"},
+			{"<leader>ft", "<cmd>Telescope colorscheme<CR>"}
 		},
 		opts = {}
 	},
 	{
 		"ThePrimeagen/harpoon",
-		dependencies = { 'nvim-lua/plenary.nvim' },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function ()
 			vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
 			vim.keymap.set("n", "<leader>he", require("harpoon.ui").toggle_quick_menu)
@@ -382,7 +382,7 @@ return
 		"tpope/vim-surround"
 	},
 	{
-		'akinsho/toggleterm.nvim',
+		"akinsho/toggleterm.nvim",
 		lazy = false,
 		opts = {}
 	},
