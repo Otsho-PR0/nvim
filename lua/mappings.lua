@@ -30,3 +30,7 @@ vim.keymap.set("n", "<leader>r", function ()
 end)
 
 vim.keymap.set("n", "<leader>bd", "<cmd>bp | bd #<CR>")
+
+vim.keymap.set("n", "<leader>sh", "<cmd>LspClangdSwitchSourceHeader<CR>")
+
+vim.keymap.set("n", "<leader>si", "<cmd>LspClangdShowSymbolInfo<CR>")
