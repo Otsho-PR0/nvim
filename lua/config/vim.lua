@@ -32,3 +32,10 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 vim.filetype.add { extension = { hlsl = "hlsl", csp = "html", json = "jsonc" } }
+vim.api.nvim_create_autocmd("FileType",
+{
+	pattern = "hlsl",
+	callback = function()
+		vim.bo.commentstring = "// %s"
+	end,
+})

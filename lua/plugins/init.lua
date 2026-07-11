@@ -392,7 +392,8 @@ return
 		{
 			{ "<leader>cb", "<cmd>CMakeBuild<CR>" },
 			{ "<leader>cg", "<cmd>CMakeGenerate<CR>" },
-			{ "<leader>csbt", "<cmd>CMakeSelectBuildTarget<CR>" },
+			{ "<leader>csbty", "<cmd>CMakeSelectBuildType<CR>" },
+			{ "<leader>csbta", "<cmd>CMakeSelectBuildTarget<CR>" },
 			{ "<leader>csbp", "<cmd>CMakeSelectBuildPreset<CR>" },
 			{ "<leader>cslt", "<cmd>CMakeSelectLaunchTarget<CR>" },
 			{ "<leader>cr", "<cmd>CMakeRun<CR>" },
