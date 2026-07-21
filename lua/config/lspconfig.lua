@@ -1,6 +1,7 @@
 local servers =
 {
 	"lua_ls",
+	"zls",
 	"clangd",
 	"slangd",
 	"html",
@@ -71,6 +72,11 @@ vim.lsp.config("*",
 -- 	},
 -- 	on_attach = on_attach
 -- })
+
+vim.lsp.config("clangd",
+{
+	cmd = { "clangd", "--background-index", "--header-insertion=never" }
+})
 
 vim.lsp.enable(servers)
 
