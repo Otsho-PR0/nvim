@@ -83,7 +83,7 @@ vim.lsp.enable(servers)
 local x = vim.diagnostic.severity
 
 vim.diagnostic.config {
-	virtual_text = false,
+	virtual_text = true,
 	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 	underline = false,
 	float = { border = "single" }
