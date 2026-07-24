@@ -236,11 +236,11 @@ return
 				executable = {
 					command = "codelldb.cmd",
 					args = {"--port", "${port}"},
-					-- Add delay to avoid race condition
+
 					on_start = function()
 						vim.defer_fn(function()
 							print("CodeLLDB server started, ready to connect")
-						end, 500) -- 500ms delay
+						end, 500)
 					end
 				}
 			}
@@ -291,7 +291,7 @@ return
 
 			dap.configurations.c = dap.configurations.cpp
 			dap.configurations.asm = dap.configurations.cpp
-			dap.configurations.hlsl = dap.configurations.cpp
+			dap.configurations.zig = dap.configurations.cpp
 
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapStopped", { text = "❭", texthl = "DapStopped", linehl = "", numhl = "" })
